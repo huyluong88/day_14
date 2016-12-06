@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    test
+</body>
+<script>
+    function Contact(name, phone, address, added, id) {
+        this.name = name,
+            this.phone = phone,
+            this.address = address,
+            this.added = new Date(),
+            this.id = id
+    }
+
+    var adam = new Contact("Adam", "7765568876", {
+        street: "101 S. Garland Ave",
+        city: "Orlando",
+        state: "FL"
+    })
+
+
+    var alex = new Contact("Alex", "7765563323", {
+        street: "201 S. Garland Ave",
+        city: "Orlando",
+        state: "FL"
+    })
+    var huy = new Contact("Huy", "7765512369", {
+        street: "301 S. Garland Ave",
+        city: "Orlando",
+        state: "FL"
+    })
+    var myContact = new ContactList()
+    myContact.add(adam)
+    myContact.add(alex)
+    myContact.add(huy)
+
+    var findContact = new ContactList()
+    findContact.find(adam)
+
+
+    function ContactList() {
+        this.contacts = []
+        this.add = function(contact) {
+            contact.id = Math.random() * 10
+            this.contacts.push(contact)
+        }
+
+        this.people = []
+        this.find = function(contact){
+        this.people.push(contact)
+        }
+
+    }
+
+    
+</script>
+
+</html>
